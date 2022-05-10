@@ -18,7 +18,7 @@ function Home() {
     const response = await axios.post("/user", data);
     if (response.data) console.log(response.data);
     window.location.assign(
-      "http://localhost:3000/body"
+      "https://clever-gaufre-774ebf.netlify.app/body"
     );
   };
   return (
