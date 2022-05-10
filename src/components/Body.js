@@ -9,14 +9,24 @@ function Body() {
   const forward = async () => {
     const request = await axios.get("/forward");
     // const randomNumber =
-    if (request) setQuote(request.data);
+
+    if (request.data !== 'invalid'){ setQuote(request.data);}
+    else if (request.data === 'invalid') { 
+      alert('Quote has reached maximum state.')
+      
+    }
+    
     console.log(request);
   };
 
   const reverse = async () => {
     const request = await axios.get("/backward");
     // const randomNumber =
-    if (request) setQuote(request.data);
+    if (request.data !== 'invalid') {setQuote(request.data);}
+    else if (request.data === 'invalid') { 
+      alert('Quote has reached minimum state.')
+      
+    }
     console.log(request);
   };
   useEffect(() => {
@@ -49,6 +59,7 @@ function Body() {
         >
           {{ quote } ? (
             <div>
+              {" "}
               {quote.map((each) => {
                 return (
                   <div key={each.id}>

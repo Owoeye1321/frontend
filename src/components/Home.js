@@ -17,7 +17,9 @@ function Home() {
     console.log(data);
     const response = await axios.post("/user", data);
     if (response.data) console.log(response.data);
-    window.location.assign("/body");
+    window.location.assign(
+      "http://localhost:3000/body"
+    );
   };
   return (
     <div
@@ -54,8 +56,6 @@ function Home() {
           onSubmit={(e) => {
             submitForm(e);
           }}
-          method='POST'
-          dete-netlify='true'
         >
           <div>
             <label>
