@@ -8,7 +8,7 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 function Header() {
 
   const sendMail = async () => {
-      const request = await axios.post("/sendMail");
+      const request = await axios.post("https://87c3-129-205-124-226.in.ngrok.io/sendMail");
          if (request.data === 'success') {  
            alert('An email would be sent to you shortly')
               }else if(request.data === "invalid"){

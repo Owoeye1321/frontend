@@ -15,7 +15,7 @@ function Home() {
   const submitForm = async (e) => {
     e.preventDefault();
     console.log(data);
-    const response = await axios.post("/user", data);
+    const response = await axios.post("https://87c3-129-205-124-226.in.ngrok.io/user", data);
     if (response.data) console.log(response.data);
     window.location.assign(
       "https://clever-gaufre-774ebf.netlify.app/body"

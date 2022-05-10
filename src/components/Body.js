@@ -7,7 +7,7 @@ import SkipNextIcon from "@mui/icons-material/SkipNext";
 function Body() {
   const [quote, setQuote] = useState([]);
   const forward = async () => {
-    const request = await axios.get("/forward");
+    const request = await axios.get("https://87c3-129-205-124-226.in.ngrok.io/forward");
     // const randomNumber =
 
     if (request.data !== 'invalid'){ setQuote(request.data);}
@@ -20,7 +20,7 @@ function Body() {
   };
 
   const reverse = async () => {
-    const request = await axios.get("/backward");
+    const request = await axios.get("https://87c3-129-205-124-226.in.ngrok.io/backward");
     // const randomNumber =
     if (request.data !== 'invalid') {setQuote(request.data);}
     else if (request.data === 'invalid') { 
@@ -31,7 +31,7 @@ function Body() {
   };
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get("/fetchApi");
+      const request = await axios.get("https://87c3-129-205-124-226.in.ngrok.io/fetchApi");
       // const randomNumber =
       if (request.data) setQuote(request.data);
       console.log(request);
