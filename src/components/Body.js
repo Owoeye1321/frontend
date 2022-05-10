@@ -8,26 +8,15 @@ function Body() {
   const [quote, setQuote] = useState([]);
   const forward = async () => {
     const request = await axios.get("https://87c3-129-205-124-226.in.ngrok.io/forward");
-    // const randomNumber =
-
-    if (request.data !== 'invalid'){ setQuote(request.data);}
-    else if (request.data === 'invalid') { 
-      alert('Quote has reached maximum state.')
-      
-    }
-    
+    if (request.data) setQuote(request.data);
     console.log(request);
   };
 
   const reverse = async () => {
     const request = await axios.get("https://87c3-129-205-124-226.in.ngrok.io/backward");
-    // const randomNumber =
-    if (request.data !== 'invalid') {setQuote(request.data);}
-    else if (request.data === 'invalid') { 
-      alert('Quote has reached minimum state.')
-      
-    }
+    if (request.data) setQuote(request.data);
     console.log(request);
+
   };
   useEffect(() => {
     async function fetchData() {
